@@ -1,8 +1,18 @@
 version: '3.4'
 
 services:
-    backend:
+    fe:
+        build: ./fe
+        ports:
+            - "8088:80"
+        volumes:
+            - ./fe:/opt/spinstepanenko/fe
+        depends_on:
+            - "be"
+    be:
         build: ./be
         ports:
             - "5000:5000"
         command: python manage.py start_app
+        volumes:
+            - ./be:/opt/spinstepanenko/be
