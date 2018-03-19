@@ -1,5 +1,6 @@
 <template>
   <div>
+      <h2>rabbit waz here</h2>
   </div>
 </template>
 
